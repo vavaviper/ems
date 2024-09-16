@@ -8,6 +8,7 @@ The **Employee Management System** is a robust CRUD RESTful API built using Spri
 - **PostgreSQL**: A powerful relational database system used for its advanced capabilities, including reliable transactions and concurrent access management.
 - **Spring Data JPA**: Facilitates the implementation of JPA-based repositories, simplifying data access and management within the relational database.
 - **Hibernate**: Handles object-relational mapping (ORM) to manage data operations such as create, retrieve, update, and delete (CRUD) with efficiency and ease.
+- **Postman**: A tool used for testing and interacting with the API. Postman provides a user-friendly interface to make HTTP requests, validate responses, and automate testing workflows. A pre-configured Postman collection is available to test the various API endpoints.
 
 ## Features
 
