@@ -2,7 +2,7 @@
 
 The Employee Management System is a robust CRUD RESTful API built using Spring Boot, PostgreSQL, Spring Data JPA, and Hibernate. This project showcases the powerful combination of these technologies to create a scalable and efficient backend solution.
 
-##Technologies Used
+Technologies Used
 
     Spring Boot: Streamlines the development of Spring applications through convention-over-configuration, allowing for rapid development and a focus on business logic rather than setup.
 
@@ -12,7 +12,7 @@ The Employee Management System is a robust CRUD RESTful API built using Spring B
 
     Hibernate: Handles object-relational mapping, managing the data operations such as create, retrieve, update, and delete (CRUD) with ease, thanks to its robust ORM capabilities.
 
-##Features
+Features
 
     Comprehensive CRUD Operations: Provides full support for create, read, update, and delete operations through a well-defined API.
     Database Integration: Utilizes PostgreSQL for reliable data storage and management.
