@@ -1,6 +1,8 @@
 package net.employeemanager.ems_backend.service;
+
 import java.util.List;
 import net.employeemanager.ems_backend.dto.EmployeeDto;
+import net.employeemanager.ems_backend.dto.DepartmentDTO;
 
 public interface EmployeeService {
 
@@ -14,4 +16,5 @@ public interface EmployeeService {
 
     void deleteEmployee(Long employeeId);
 
+    List<DepartmentDTO> getEmployeeStatsByDepartment();
 }

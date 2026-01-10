@@ -1,6 +1,5 @@
 package net.employeemanager.ems_backend.mapper;
 
-
 import net.employeemanager.ems_backend.dto.EmployeeDto;
 import net.employeemanager.ems_backend.entity.Employee;
 
@@ -10,8 +9,9 @@ public class EmployeeMapper {
                 employee.getId(),
                 employee.getFirstName(),
                 employee.getLastName(),
-                employee.getEmail()
-        );
+                employee.getEmail(),
+                employee.getDepartment(),
+                employee.getSalary());
     }
 
     public static Employee mapToEmployee(EmployeeDto employeeDto) {
@@ -19,7 +19,8 @@ public class EmployeeMapper {
                 employeeDto.getId(),
                 employeeDto.getFirstName(),
                 employeeDto.getLastName(),
-                employeeDto.getEmail()
-        );
+                employeeDto.getEmail(),
+                employeeDto.getDepartment(),
+                employeeDto.getSalary());
     }
 }
