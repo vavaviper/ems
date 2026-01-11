@@ -7,10 +7,10 @@ import net.employeemanager.ems_backend.exception.ResourceNotFoundException;
 import net.employeemanager.ems_backend.mapper.EmployeeMapper;
 import net.employeemanager.ems_backend.repository.EmployeeRepository;
 import net.employeemanager.ems_backend.service.EmployeeService;
+import net.employeemanager.ems_backend.dto.DepartmentDTO;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
-
 
 @Service
 @AllArgsConstructor
@@ -29,8 +29,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public EmployeeDto getEmployeeById(long employeeId) {
         Employee employee = employeeRepository.findById(employeeId)
-            .orElseThrow(() ->
-                    new ResourceNotFoundException("Employee with id " + employeeId + " not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Employee with id " + employeeId + " not found"));
         return EmployeeMapper.mapToEmployeeDto(employee);
     }
 
@@ -46,15 +45,13 @@ public class EmployeeServiceImpl implements EmployeeService {
     public EmployeeDto updateEmployee(Long employeeId, EmployeeDto updatedEmployee) {
 
         Employee employee = employeeRepository.findById(employeeId).orElseThrow(
-                () -> new ResourceNotFoundException("Employee with id " + employeeId + " not found")
-        );
+                () -> new ResourceNotFoundException("Employee with id " + employeeId + " not found"));
 
         employee.setFirstName(updatedEmployee.getFirstName());
         employee.setLastName(updatedEmployee.getLastName());
         employee.setEmail(updatedEmployee.getEmail());
 
         Employee updatedEmployeeObj = employeeRepository.save(employee);
-
 
         return EmployeeMapper.mapToEmployeeDto(updatedEmployeeObj);
     }
@@ -63,11 +60,15 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void deleteEmployee(Long employeeId) {
 
         Employee employee = employeeRepository.findById(employeeId).orElseThrow(
-                () -> new ResourceNotFoundException("Employee with id " + employeeId + " not found")
-        );
+                () -> new ResourceNotFoundException("Employee with id " + employeeId + " not found"));
 
         employeeRepository.deleteById(employeeId);
 
+    }
+
+    @Override
+    public List<DepartmentDTO> getEmployeeStatsByDepartment() {
+        return employeeRepository.findEmployeeStatsByDepartment();
     }
 
 }
